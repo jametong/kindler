@@ -8,5 +8,5 @@ end
 
 mobi = Mobi.new
 mobi.title = File.basename(file, '.html')
-mobi.content = File.open(file).read
+mobi.content = File.open(file) { |f| f.read }
 mobi.write_file "#{File.basename(file, '.html')}.mobi"
